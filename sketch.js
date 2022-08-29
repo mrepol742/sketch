@@ -25,8 +25,11 @@ canvas.addEventListener("mousemove", (e) => {
 
   ctx.lineWidth = 4.5;
   ctx.lineCap = "round";
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    ctx.strokeStyle = "#ffffff";
+} else {
   ctx.strokeStyle = "#212121";
-
+}
   ctx.lineTo(e.clientX, e.clientY);
   ctx.stroke();
 });
